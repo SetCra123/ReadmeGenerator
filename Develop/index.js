@@ -2,12 +2,13 @@
 const inquirer = require('inquirer');
 const colors = require('colors');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
 inquirer
     .prompt([
     {
         type: "input",
-        name: "project-title",
+        name: "title",
         message: "Please enter the title of your project",  
     },
     {
@@ -17,7 +18,7 @@ inquirer
     },
     {
         type: "input",
-        name: "table-of-contents",
+        name: "tOfContent",
         message: "If your README is long, add a table of contents to make it easy for users to find what they need.",
     },
     {
@@ -45,9 +46,9 @@ inquirer
 // // TODO: Create a function to write README file
 // function writeToFile(fileName, data) {}
 .then((answers) => {
-    const writeToFile = generateREADme(answers);
+    const writeREADME = generateMarkdown(answers);
 
-    fs.writeFile('README.md', writeToFile, (err) =>
+    fs.writeFile('README.md', writeREADME, (err) =>
     err ? console.log(err) : console.log("Successfully created README.md")
     );
 });
@@ -65,16 +66,16 @@ inquirer
 // function init() {}
 
 
-// const init = () => {
-//     promptUser()
-//       // Use writeFile method imported from fs.promises to use promises instead of
-//       // a callback function
-//       .then((answers) => writeFile('index.html', generateHTML(answers)))
-//       .then(() => console.log('Successfully wrote to index.html'))
-//       .catch((err) => console.error(err));
-//   };
+const init = () => {
+    promptUser()
+      // Use writeFile method imported from fs.promises to use promises instead of
+      // a callback function
+      .then((answers) => writeFile('README.md', writeREADME(answers)))
+      .then(() => console.log('Successfully wrote to README.md'))
+      .catch((err) => console.error(err));
+  };
   
-//   init();
+  init();
 
 // // Function call to initialize app
 // init();
