@@ -4,7 +4,7 @@ const colors = require('colors');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
-inquirer
+const promptUser = ()=> inquirer
     .prompt([
     {
         type: "input",
@@ -14,7 +14,7 @@ inquirer
     {
         type: "input",
         name: "description",
-        message: "Use the following questions to provide a description of your project. Provide a short description explaining the what, why, and how of your project.",
+        message: "Provide a short description explaining the what, why, and how of your project.",
     },
     {
         type: "input",
@@ -37,9 +37,10 @@ inquirer
         message: "List your collaborators, if any, with links to their GitHub profiles. If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section. If you followed tutorials, include links to those here as well."
     },
     {
-        type: "input",
+        type: "list",
         name: "license",
-        message: "The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/)."
+        message: "Whic license would you like to use?",
+        choices: ['MIT','Apache','GNU','Freeware']  
     },   
     ])
 
@@ -52,13 +53,7 @@ inquirer
     err ? console.log(err) : console.log("Successfully created README.md")
     );
 });
-// .then((answers) => {
-//     const htmlPageContent = generateHTML(answers);
 
-//     fs.writeFile('index.html', htmlPageContent, (err) =>
-//       err ? console.log(err) : console.log('Successfully created index.html!')
-//     );
-//   });
 
 
 
