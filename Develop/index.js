@@ -9,37 +9,37 @@ const promptUser = ()=> inquirer
     {
         type: "input",
         name: "title",
-        message: "Please enter the title of your project",  
+        message: "Please enter the title of your project".yellow
     },
     {
         type: "input",
         name: "description",
-        message: "Provide a short description explaining the what, why, and how of your project.",
+        message: "Provide a short description explaining the what, why, and how of your project.".yellow
     },
     {
         type: "input",
         name: "tOfContent",
-        message: "If your README is long, add a table of contents to make it easy for users to find what they need.",
+        message: "If your README is long, add a table of contents to make it easy for users to find what they need.".yellow,
     },
     {
         type: "input",
         name: "installation",
-        message: "What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.",
+        message: "What are the steps required to install your project?".yellow,
     },
     {
         type: "input",
         name: "usage",
-        message: "Provide instructions and examples for use. Include screenshots as needed."
+        message: "Provide instructions and examples for use. Include screenshots as needed.".yellow,
     },
     {
         type: "input",
         name: "credits",
-        message: "List your collaborators, if any, with links to their GitHub profiles."
+        message: "List your collaborators, if any, with links to their GitHub profiles.".yellow,
     },
     {
         type: "list",
         name: "license",
-        message: "Whic license would you like to use?",
+        message: "Which license would you like to use?".yellow,
         choices: ['MIT','Apache','GNU','Freeware']  
     },   
     ])

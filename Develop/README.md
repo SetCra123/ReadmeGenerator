@@ -1,15 +1,15 @@
-# Setrige
+# 
 
-          ## Several things went into this file such as formating this so it works correctly
+          ## 
 
-          ## 1.This
+          ## 
 
-          ## me
+          ## 
 
-          ## me
+          ## 
 
-          ## me
+          ## 
 
-          ## Freeware
+          ## MIT
 
-          https://img.shields.io/badge/licensce-Freeware-blue
+          https://img.shields.io/badge/licensce-MIT-blue
