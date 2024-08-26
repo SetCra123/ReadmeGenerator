@@ -18,11 +18,6 @@ const promptUser = ()=> inquirer
     },
     {
         type: "input",
-        name: "tOfContent",
-        message: colors.green("If your README is long, add a table of contents to make it easy for users to find what they need."),
-    },
-    {
-        type: "input",
         name: "installation",
         message: colors.green("What are the steps required to install your project?"),
     },
@@ -61,16 +56,11 @@ const promptUser = ()=> inquirer
 // function init() {}
 
 
-const init = () => {
-    promptUser()
+
+promptUser()
       // Use writeFile method imported from fs.promises to use promises instead of
       // a callback function
-      .then((answers) => fs.writeFile('README.md', writeREADME(answers)))
-      .then(() => console.log('Successfully wrote to README.md'))
-      .catch((err) => console.error(err));
-  };
-  
-  init();
+ 
 
 // // Function call to initialize app
 // init();
